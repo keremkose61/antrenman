@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">VEXA</string>
+    <!-- Premium & Placeholder Strings -->
+    <string name="premium_member_badge">Premium Üye ⚡</string>
+    <string name="settings_title">AYARLAR</string>
+    <string name="dark_theme_toggle">Karanlık Tema</string>
+    <string name="daily_step_goal">Günlük Adım Hedefi</string>
+    <string name="notifications">Bildirimler</string>
+    <string name="about_app">VEXA Hakkında</string>
+    <string name="logout">Çıkış Yap</string>
+</resources>

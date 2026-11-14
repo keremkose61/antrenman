@@ -1,0 +1,53 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <!-- Glow Ring / Background Circle -->
+    <path
+        android:fillColor="#1B2836"
+        android:strokeColor="#26A69A"
+        android:strokeWidth="1.5"
+        android:pathData="M24,2A22,22 0 1,0 46,24A22,22 0 0,0 24,2Z" />
+
+    <!-- Antenna -->
+    <path
+        android:strokeColor="#4DB6AC"
+        android:strokeWidth="2"
+        android:pathData="M24,10 L24,14" />
+    <path
+        android:fillColor="#00E5FF"
+        android:pathData="M24,7A3,3 0 1,0 27,10A3,3 0 0,0 24,7Z" />
+
+    <!-- Head / Face -->
+    <path
+        android:fillColor="#222B38"
+        android:strokeColor="#26A69A"
+        android:strokeWidth="1.5"
+        android:pathData="M15,14 L33,14 A6,6 0 0,1 39,20 L39,29 A8,8 0 0,1 31,37 L17,37 A8,8 0 0,1 9,29 L9,20 A6,6 0 0,1 15,14 Z" />
+
+    <!-- Friendly Eyes (Glowing Cyan) -->
+    <path
+        android:fillColor="#00E5FF"
+        android:pathData="M18,21 A3,4 0 1,0 21,25 A3,4 0 0,0 18,21 Z" />
+    <path
+        android:fillColor="#00E5FF"
+        android:pathData="M30,21 A3,4 0 1,0 33,25 A3,4 0 0,0 30,21 Z" />
+
+    <!-- Cheerful Smile -->
+    <path
+        android:strokeColor="#4DB6AC"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:pathData="M20,30 Q24,34 28,30" />
+
+    <!-- Headphone Left -->
+    <path
+        android:fillColor="#26A69A"
+        android:pathData="M6,21 A3,5 0 0,1 9,18 L9,28 A3,5 0 0,1 6,25 Z" />
+
+    <!-- Headphone Right -->
+    <path
+        android:fillColor="#26A69A"
+        android:pathData="M39,18 A3,5 0 0,1 42,21 L42,25 A3,5 0 0,1 39,28 Z" />
+</vector>

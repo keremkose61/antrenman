@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/surface_dark"
+    android:fillViewport="true">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <!-- Handle bar -->
+    <View
+        android:layout_width="48dp"
+        android:layout_height="4dp"
+        android:background="@drawable/bg_handle_bar"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Image/GIF -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        style="@style/Widget.Material3.CardView.Elevated"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="0dp"
+        app:cardBackgroundColor="@color/background_dark_secondary">
+
+        <ImageView
+            android:id="@+id/ivDetailGif"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:contentDescription="Egzersiz Animasyonu" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Name and Category -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:id="@+id/tvDetailName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bench Press"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary_dark" />
+
+        <TextView
+            android:id="@+id/tvDetailCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Göğüs - Compound"
+            android:textSize="14sp"
+            android:textColor="@color/gradient_start"
+            android:layout_marginTop="6dp" />
+    </LinearLayout>
+
+    <!-- Sets x Reps badges -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="24dp"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/bg_day_banner"
+            android:padding="16dp"
+            android:layout_marginEnd="8dp">
+
+            <TextView
+                android:id="@+id/tvDetailSets"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="@color/gradient_start" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SET"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_secondary_dark"
+                android:letterSpacing="0.1"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/bg_day_banner"
+            android:padding="16dp"
+            android:layout_marginStart="8dp">
+
+            <TextView
+                android:id="@+id/tvDetailReps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="@color/gradient_start" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TEKRAR"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_secondary_dark"
+                android:letterSpacing="0.1"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Progressive Overload Set Logger Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_day_banner"
+        android:padding="20dp"
+        android:layout_marginBottom="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="🏋️ Set &amp; Ağırlık Kaydı"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary_dark" />
+
+            <TextView
+                android:id="@+id/tvLastLoggedWeight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kayıt yok"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="@color/primary_light"
+                android:background="@drawable/bg_pill_primary"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="14dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginEnd="6dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="AĞIRLIK (KG)"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_secondary_dark"
+                    android:letterSpacing="0.08"
+                    android:layout_marginBottom="4dp" />
+
+                <EditText
+                    android:id="@+id/etLogWeight"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="Örn: 75"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/text_primary_dark"
+                    android:textColorHint="@color/text_secondary_dark"
+                    android:background="@drawable/bg_input_field"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="6dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TEKRAR"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_secondary_dark"
+                    android:letterSpacing="0.08"
+                    android:layout_marginBottom="4dp" />
+
+                <EditText
+                    android:id="@+id/etLogReps"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="Örn: 8"
+                    android:inputType="number"
+                    android:textColor="@color/text_primary_dark"
+                    android:textColorHint="@color/text_secondary_dark"
+                    android:background="@drawable/bg_input_field"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnSaveSetAndRest"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Seti Kaydet &amp; 90s Dinlen ⏱️"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:background="@drawable/button_gradient"
+            android:elevation="4dp" />
+    </LinearLayout>
+
+    <!-- Gradient Divider -->
+    <View
+        android:layout_width="60dp"
+        android:layout_height="3dp"
+        android:background="@drawable/bg_stat_badge"
+        android:layout_gravity="center"
+        android:layout_marginBottom="24dp" />
+
+    <!-- How-to section -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="📋 Nasıl Yapılır?"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_primary_dark"
+        android:layout_marginBottom="14dp" />
+
+    <!-- How-to steps -->
+    <TextView
+        android:id="@+id/tvDetailHowTo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="1. Başlangıç pozisyonunu al"
+        android:textSize="14sp"
+        android:textColor="@color/text_secondary_dark"
+        android:lineSpacingMultiplier="1.8"
+        android:layout_marginBottom="20dp" />
+
+    <!-- Tips section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_tip_section"
+        android:padding="16dp"
+        android:layout_marginBottom="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="💡 İpucu"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/gradient_start"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/tvDetailTip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Egzersizi doğru form ile yapmak daha önemlidir."
+            android:textSize="13sp"
+            android:textColor="@color/text_secondary_dark"
+            android:lineSpacingMultiplier="1.5" />
+    </LinearLayout>
+
+    <!-- Video Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnWatchVideo"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="▶  Videoyu İzle"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        android:backgroundTint="@color/primary"
+        android:stateListAnimator="@null"
+        android:layout_marginBottom="8dp"
+        style="@style/Widget.Material3.Button"
+        app:cornerRadius="16dp"
+        app:rippleColor="#4026A69A" />
+
+</LinearLayout>
+</ScrollView>

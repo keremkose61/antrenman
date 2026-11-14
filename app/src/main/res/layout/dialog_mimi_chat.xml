@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/surface_dark"
+    android:padding="16dp">
+
+    <!-- Handle Bar -->
+    <View
+        android:layout_width="48dp"
+        android:layout_height="4dp"
+        android:background="@drawable/bg_handle_bar"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="14dp" />
+
+    <!-- Mimi Chat Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingBottom="12dp">
+
+        <FrameLayout
+            android:layout_width="44dp"
+            android:layout_height="44dp">
+
+            <ImageView
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:src="@drawable/ic_mimi_avatar"
+                android:contentDescription="Mimi Avatar" />
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_gravity="bottom|end"
+                android:background="@drawable/bg_badge_success" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mimi • Yapay Zeka Koçun"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary_dark" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🟢 Canlı • Su, Kas &amp; Antrenman Takipçisi"
+                android:textSize="11sp"
+                android:textColor="@color/primary_light" />
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/btnMimiClose"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            app:tint="@color/text_secondary_dark"
+            android:contentDescription="Kapat" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/glass_border"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Quick Question Chips -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:layout_marginBottom="12dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/chipWater"
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:gravity="center"
+                android:text="💧 Su Takibi"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/primary_light"
+                android:background="@drawable/bg_pill_primary"
+                android:paddingHorizontal="14dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:id="@+id/chipRecovery"
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:gravity="center"
+                android:text="💪 Kas Toparlanması"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/primary_light"
+                android:background="@drawable/bg_pill_primary"
+                android:paddingHorizontal="14dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:id="@+id/chipRest"
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:gravity="center"
+                android:text="⏱️ Set Arası Dinlenme"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/primary_light"
+                android:background="@drawable/bg_pill_primary"
+                android:paddingHorizontal="14dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:id="@+id/chipProtein"
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:gravity="center"
+                android:text="🥩 Protein Rehberi"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/primary_light"
+                android:background="@drawable/bg_pill_primary"
+                android:paddingHorizontal="14dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:id="@+id/chipMotivation"
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:gravity="center"
+                android:text="🔥 Motivasyon"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/primary_light"
+                android:background="@drawable/bg_pill_primary"
+                android:paddingHorizontal="14dp"
+                android:clickable="true"
+                android:focusable="true" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- Chat Messages Scroll Container -->
+    <ScrollView
+        android:id="@+id/scrollMimiChat"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:layout_marginBottom="12dp">
+
+        <LinearLayout
+            android:id="@+id/layoutMimiMessages"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingVertical="4dp" />
+    </ScrollView>
+
+    <!-- Input Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <EditText
+            android:id="@+id/etMimiInput"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_input_field"
+            android:hint="Mimi'ye bir şey sor..."
+            android:textColorHint="@color/text_secondary_dark"
+            android:textColor="@color/text_primary_dark"
+            android:textSize="14sp"
+            android:paddingHorizontal="16dp"
+            android:imeOptions="actionSend"
+            android:inputType="textCapSentences"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/btnMimiSend"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:text="Gönder ⚡"
+            android:textStyle="bold"
+            android:textSize="13sp"
+            android:textColor="@color/white"
+            android:background="@drawable/button_gradient"
+            android:elevation="4dp"
+            android:paddingHorizontal="16dp" />
+    </LinearLayout>
+
+</LinearLayout>

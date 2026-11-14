@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>PPL Antrenman Programı</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #020617;
+        color: #e5e7eb;
+        padding: 30px;
+    }
+
+    h1 {
+        text-align: center;
+        color: #38bdf8;
+        margin-bottom: 40px;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 24px;
+    }
+
+    .day {
+        background: #020617;
+        border: 1px solid #1e293b;
+        border-radius: 16px;
+        padding: 20px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+    .day:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 20px 40px rgba(56, 189, 248, 0.2);
+        border-color: #38bdf8;
+    }
+
+    .day h2 {
+        color: wheat;
+        margin-bottom: 14px;
+        transition: color 0.3s ease;
+    }
+
+    .day:hover h2 {
+        color: #38bdf8;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    li {
+        padding: 8px 0;
+        border-bottom: 1px solid #1e293b;
+        opacity: 0.85;
+        transform: translateX(0);
+        transition: all 0.3s ease;
+    }
+
+    .day:hover li {
+        opacity: 1;
+        transform: translateX(6px);
+    }
+
+    li:last-child {
+        border-bottom: none;
+    }
+</style>
+</head>
+
+<body>
+
+<h1>PPL Antrenman Programı</h1>
+
+<div class="container">
+
+    <div class="day">
+        <h2>Paz: Göğüs & Triceps</h2>
+        <ul>
+            <li>Bench Press — 4×8</li>
+            <li>Incline Dumbbell Press — 3×10</li>
+            <li>Chest Fly — 3×12</li>
+            <li>Triceps Pushdown — 3×12</li>
+            <li>Overhead Triceps Extension — 3×10</li>
+            <li>Bench Dip — 3×10</li>
+        </ul>
+    </div>
+
+    <div class="day">
+        <h2>Salı: Sırt & Biceps</h2>
+        <ul>
+            <li>Lat Pulldown — 4×10</li>
+            <li>Barbell Row — 4×8</li>
+            <li>Seated Cable Row — 3×10</li>
+            <li>Dumbbell Curl — 3×10</li>
+            <li>Hammer Curl — 3×10</li>
+        </ul>
+    </div>
+
+    <div class="day">
+        <h2>Çar: Bacak & Omuz</h2>
+        <ul>
+            <li>Squat — 4×8</li>
+            <li>Leg Press — 3×10</li>
+            <li>Leg Curl — 3×12</li>
+            <li>Leg Extension — 3×12</li>
+            <li>Overhead Press — 4×8</li>
+            <li>Lateral Raise — 3×12</li>
+            <li>Face Pull — 3×15</li>
+        </ul>
+    </div>
+
+    <div class="day">
+        <h2>Perş: Göğüs & Triceps</h2>
+        <ul>
+            <li>Bench Press — 4×8</li>
+            <li>Incline Dumbbell Press — 3×10</li>
+            <li>Chest Fly — 3×12</li>
+            <li>Triceps Pushdown — 3×12</li>
+            <li>Overhead Triceps Extension — 3×10</li>
+            <li>Bench Dip — 3×10</li>
+        </ul>
+    </div>
+
+    <div class="day">
+        <h2>Cum: Sırt & Biceps</h2>
+        <ul>
+            <li>Lat Pulldown — 4×10</li>
+            <li>Barbell Row — 4×8</li>
+            <li>Seated Cable Row — 3×10</li>
+            <li>Dumbbell Curl — 3×10</li>
+            <li>Hammer Curl — 3×10</li>
+        </ul>
+    </div>
+
+    <div class="day">
+        <h2>Cmt-Paz: Dinlen</h2>
+        <ul>
+            <li>🧘 İyi dinlen</li>
+            <li>💧 Bol su iç</li>
+            <li>🥩 Yeterli protein al</li>
+            <li>🛌 Kaliteli uyku uyu</li>
+        </ul>
+    </div>
+
+</div>
+
+</body>
+</html>

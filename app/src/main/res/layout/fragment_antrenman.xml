@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_dark"
+    android:fillViewport="true"
+    tools:context=".AntrenmanFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+            
+            <TextView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:text="🏋️"
+                android:textSize="22sp"
+                android:gravity="center"
+                android:layout_marginEnd="12dp" />
+                
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Antrenman Programı"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary_dark" />
+        </LinearLayout>
+
+        <!-- Day Banner -->
+        <LinearLayout
+            android:id="@+id/dayBanner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_day_banner"
+            android:orientation="vertical"
+            android:padding="22dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/tvDayTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pazartesi"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary_dark"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:id="@+id/tvMuscleGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Göğüs + Triceps"
+                android:textSize="15sp"
+                android:textColor="@color/gradient_start" />
+
+            <LinearLayout
+                android:id="@+id/exerciseCountLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="12dp">
+
+                <TextView
+                    android:id="@+id/tvExerciseCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="6 Egzersiz"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/primary_light"
+                    android:background="@drawable/bg_sets_reps_pill"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="5dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Active Rest Timer Banner (Görünür olduğunda geri sayar) -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardActiveRestTimer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="@color/surface_dark"
+            app:cardCornerRadius="20dp"
+            app:strokeWidth="1.5dp"
+            app:strokeColor="@color/primary_light">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="18dp">
+
+                <TextView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:text="⏱️"
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_pill_primary"
+                    android:layout_marginEnd="14dp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvRestTimerTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dinlenme Süresi"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_secondary_dark" />
+
+                    <TextView
+                        android:id="@+id/tvRestTimerSeconds"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="60 sn"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary_light" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnCancelRestTimer"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="38dp"
+                    android:text="Bitir ⏹"
+                    android:textSize="12sp"
+                    android:textColor="@color/error"
+                    app:strokeColor="@color/error"
+                    app:cornerRadius="12dp"
+                    android:paddingHorizontal="14dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Workout Action Bar (Share) -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            app:cardBackgroundColor="@color/surface_dark"
+            app:cardCornerRadius="20dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="@color/glass_border">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="14dp">
+
+                <TextView
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:text="🎯"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_pill_primary"
+                    android:layout_marginEnd="12dp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Antrenmanını Tamamla"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary_dark" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Başarını arkadaşlarınla paylaş"
+                        android:textSize="11sp"
+                        android:textColor="@color/text_secondary_dark" />
+                </LinearLayout>
+
+                <!-- Share Button -->
+                <LinearLayout
+                    android:id="@+id/btnShareWorkout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:background="@drawable/button_gradient"
+                    android:gravity="center"
+                    android:paddingHorizontal="16dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🏆 Paylaş"
+                        android:textStyle="bold"
+                        android:textSize="13sp"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Gün Tabs -->
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/pplTabs"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/bg_tab_rounded"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            app:tabMode="scrollable"
+            app:tabGravity="center"
+            app:tabIndicatorColor="@color/gradient_start"
+            app:tabSelectedTextColor="@color/gradient_start"
+            app:tabTextColor="@color/text_secondary_dark"
+            app:tabIndicatorHeight="3dp"
+            app:tabRippleColor="@color/glass_white_10"
+            app:tabTextAppearance="@style/TabTextStyle"
+            app:tabMinWidth="56dp"
+            app:tabPaddingStart="12dp"
+            app:tabPaddingEnd="12dp">
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pzt" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sal" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Çar" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Per" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cum" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cmt" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Paz" />
+        </com.google.android.material.tabs.TabLayout>
+
+        <!-- Exercise Cards Container -->
+        <LinearLayout
+            android:id="@+id/exerciseContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!-- Exercise cards will be added dynamically -->
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

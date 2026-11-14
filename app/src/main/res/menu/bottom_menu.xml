@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_beslenme"
+        android:title="Beslenme"
+        android:icon="@drawable/ic_nutrition" />
+
+    <item
+        android:id="@+id/nav_istatistik"
+        android:title="Dashboard"
+        android:icon="@drawable/ic_stats" />
+
+    <item
+        android:id="@+id/nav_antrenman"
+        android:title="Antrenman"
+        android:icon="@drawable/ic_fitness" />
+
+    <item
+        android:id="@+id/nav_araclar"
+        android:title="Araçlar"
+        android:icon="@drawable/ic_tools" />
+
+</menu>

@@ -1,0 +1,853 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_dark"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Title -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:text="⚡"
+                android:textSize="22sp"
+                android:gravity="center"
+                android:layout_marginEnd="12dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fitness Araçları"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary_dark" />
+        </LinearLayout>
+
+        <!-- Category Selector Chips -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:layout_marginBottom="20dp">
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/toolChipGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:singleSelection="true"
+                app:selectionRequired="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipPlate"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="🧮 Plaka"
+                    android:textColor="@color/white" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipOneRm"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="⚖️ 1RM Güç"
+                    android:textColor="@color/white" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipMacro"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🥗 Kalori &amp; Makro"
+                    android:textColor="@color/white" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipHiit"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="⏱️ Tabata"
+                    android:textColor="@color/white" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipPhoto"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📸 Fizik"
+                    android:textColor="@color/white" />
+
+            </com.google.android.material.chip.ChipGroup>
+        </HorizontalScrollView>
+
+        <!-- Container for Tool Panels -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- 1. PLAKA HESAPLAYICI -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/panelPlate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:cardBackgroundColor="@color/surface_dark"
+                app:cardCornerRadius="24dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/glass_border">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="22dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Barbell Plaka Hesaplayıcı"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary_light"
+                        android:layout_marginBottom="4dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bara her iki tarafa takılacak olimpik plakaları hesapla."
+                        android:textSize="12sp"
+                        android:textColor="@color/text_secondary_dark"
+                        android:layout_marginBottom="16dp" />
+
+                    <!-- Sleek Inputs -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="16dp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_marginEnd="6dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="TOPLAM AĞIRLIK (KG)"
+                                android:textSize="10sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/text_secondary_dark"
+                                android:letterSpacing="0.08"
+                                android:layout_marginBottom="4dp" />
+
+                            <EditText
+                                android:id="@+id/etTargetWeight"
+                                android:layout_width="match_parent"
+                                android:layout_height="48dp"
+                                android:background="@drawable/bg_input_field"
+                                android:inputType="numberDecimal"
+                                android:text="85"
+                                android:gravity="center"
+                                android:textColor="@color/text_primary_dark"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_marginStart="6dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="BAR AĞIRLIĞI (KG)"
+                                android:textSize="10sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/text_secondary_dark"
+                                android:letterSpacing="0.08"
+                                android:layout_marginBottom="4dp" />
+
+                            <EditText
+                                android:id="@+id/etBarWeight"
+                                android:layout_width="match_parent"
+                                android:layout_height="48dp"
+                                android:background="@drawable/bg_input_field"
+                                android:inputType="numberDecimal"
+                                android:text="20"
+                                android:gravity="center"
+                                android:textColor="@color/text_primary_dark"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btnCalculatePlates"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:text="Plakaları Hesapla ⚡"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:background="@drawable/button_gradient"
+                        android:layout_marginBottom="16dp"
+                        android:elevation="4dp" />
+
+                    <!-- Plate Result View -->
+                    <LinearLayout
+                        android:id="@+id/layoutPlateResult"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@drawable/bg_day_banner"
+                        android:padding="18dp">
+
+                        <TextView
+                            android:id="@+id/tvPlateSideHeader"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Her Tarafa Takılacak: 32.5 kg"
+                            android:textStyle="bold"
+                            android:textSize="17sp"
+                            android:textColor="@color/primary_light"
+                            android:layout_marginBottom="10dp" />
+
+                        <TextView
+                            android:id="@+id/tvPlateDetails"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1x 20kg + 1x 10kg + 1x 2.5kg"
+                            android:textSize="14sp"
+                            android:textColor="@color/text_primary_dark"
+                            android:lineSpacingExtra="4dp" />
+
+                        <!-- Visual Bar Container -->
+                        <HorizontalScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:scrollbars="none"
+                            android:layout_marginTop="16dp">
+
+                            <LinearLayout
+                                android:id="@+id/layoutVisualBar"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical" />
+                        </HorizontalScrollView>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- 2. 1RM HESAPLAYICI -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/panelOneRm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/surface_dark"
+                app:cardCornerRadius="24dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/glass_border">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="22dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1RM Güç &amp; Antrenman Yüzdeleri"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary_light"
+                        android:layout_marginBottom="4dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Kaldırdığın ağırlık ve tekrar sayısına göre güç bölgelerini gör."
+                        android:textSize="12sp"
+                        android:textColor="@color/text_secondary_dark"
+                        android:layout_marginBottom="16dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="16dp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_marginEnd="6dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="AĞIRLIK (KG)"
+                                android:textSize="10sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/text_secondary_dark"
+                                android:letterSpacing="0.08"
+                                android:layout_marginBottom="4dp" />
+
+                            <EditText
+                                android:id="@+id/etOneRmWeight"
+                                android:layout_width="match_parent"
+                                android:layout_height="48dp"
+                                android:background="@drawable/bg_input_field"
+                                android:inputType="numberDecimal"
+                                android:text="80"
+                                android:gravity="center"
+                                android:textColor="@color/text_primary_dark"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_marginStart="6dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="TEKRAR SAYISI"
+                                android:textSize="10sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/text_secondary_dark"
+                                android:letterSpacing="0.08"
+                                android:layout_marginBottom="4dp" />
+
+                            <EditText
+                                android:id="@+id/etOneRmReps"
+                                android:layout_width="match_parent"
+                                android:layout_height="48dp"
+                                android:background="@drawable/bg_input_field"
+                                android:inputType="number"
+                                android:text="6"
+                                android:gravity="center"
+                                android:textColor="@color/text_primary_dark"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btnCalculateOneRm"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:text="1RM Gücünü Hesapla ⚡"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:background="@drawable/button_gradient"
+                        android:layout_marginBottom="16dp"
+                        android:elevation="4dp" />
+
+                    <!-- 1RM Hero Card -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@drawable/bg_day_banner"
+                        android:padding="20dp"
+                        android:gravity="center"
+                        android:layout_marginBottom="12dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="TAHMİNİ MAKSİMUM GÜÇ"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_secondary_dark"
+                            android:letterSpacing="0.1" />
+
+                        <TextView
+                            android:id="@+id/tvOneRmScore"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="96.0 kg"
+                            android:textSize="38sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/primary_light"
+                            android:layout_marginVertical="4dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1RM (Tek Tekrar)"
+                            android:textSize="12sp"
+                            android:textColor="@color/text_secondary_dark" />
+                    </LinearLayout>
+
+                    <!-- Breakdown 4-Item List -->
+                    <TextView
+                        android:id="@+id/tvOneRmBreakdown"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_input_field"
+                        android:padding="16dp"
+                        android:text="• %90 (Maksimal Güç): 86.4 kg (2-3 Tekrar)\n• %85 (Kuvvet): 81.6 kg (4-6 Tekrar)\n• %75 (Hipertrofi/Kas): 72.0 kg (8-10 Tekrar)\n• %65 (Dayanıklılık): 62.4 kg (12-15 Tekrar)"
+                        android:textSize="13sp"
+                        android:textColor="@color/text_primary_dark"
+                        android:lineSpacingExtra="6dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- 3. KALORİ & MAKRO HESAPLAYICI -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/panelMacro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/surface_dark"
+                app:cardCornerRadius="24dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/glass_border">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="22dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="BMR, Kalori &amp; Makro Hesaplayıcı"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary_light"
+                        android:layout_marginBottom="4dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Metabolizmana ve hedefine göre günlük besin dağılımı."
+                        android:textSize="12sp"
+                        android:textColor="@color/text_secondary_dark"
+                        android:layout_marginBottom="16dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="14dp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_marginEnd="4dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="KİLO (KG)"
+                                android:textSize="9sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/text_secondary_dark"
+                                android:layout_marginBottom="4dp" />
+                            <EditText
+                                android:id="@+id/etMacroWeight"
+                                android:layout_width="match_parent"
+                                android:layout_height="46dp"
+                                android:background="@drawable/bg_input_field"
+                                android:inputType="numberDecimal"
+                                android:text="75"
+                                android:gravity="center"
+                                android:textColor="@color/text_primary_dark"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_marginHorizontal="4dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="BOY (CM)"
+                                android:textSize="9sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/text_secondary_dark"
+                                android:layout_marginBottom="4dp" />
+                            <EditText
+                                android:id="@+id/etMacroHeight"
+                                android:layout_width="match_parent"
+                                android:layout_height="46dp"
+                                android:background="@drawable/bg_input_field"
+                                android:inputType="number"
+                                android:text="178"
+                                android:gravity="center"
+                                android:textColor="@color/text_primary_dark"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_marginStart="4dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="YAŞ"
+                                android:textSize="9sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/text_secondary_dark"
+                                android:layout_marginBottom="4dp" />
+                            <EditText
+                                android:id="@+id/etMacroAge"
+                                android:layout_width="match_parent"
+                                android:layout_height="46dp"
+                                android:background="@drawable/bg_input_field"
+                                android:inputType="number"
+                                android:text="24"
+                                android:gravity="center"
+                                android:textColor="@color/text_primary_dark"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- Goal Selector -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="HEDEF SEÇİMİ:"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_secondary_dark"
+                        android:letterSpacing="0.08"
+                        android:layout_marginBottom="6dp" />
+
+                    <com.google.android.material.button.MaterialButtonToggleGroup
+                        android:id="@+id/toggleGoal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:singleSelection="true"
+                        app:selectionRequired="true"
+                        android:layout_marginBottom="16dp">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnGoalFatLoss"
+                            style="?attr/materialButtonOutlinedStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Definasyon"
+                            android:textSize="11sp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnGoalMaintain"
+                            style="?attr/materialButtonOutlinedStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Koru"
+                            android:textSize="11sp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnGoalBulk"
+                            style="?attr/materialButtonOutlinedStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:checked="true"
+                            android:text="Bulk (Kas)"
+                            android:textSize="11sp" />
+                    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+                    <Button
+                        android:id="@+id/btnCalculateMacro"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:text="Kalori &amp; Makro Hesapla 🥗"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:background="@drawable/button_gradient"
+                        android:layout_marginBottom="16dp"
+                        android:elevation="4dp" />
+
+                    <!-- Macro Result Box -->
+                    <LinearLayout
+                        android:id="@+id/layoutMacroResult"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@drawable/bg_day_banner"
+                        android:padding="18dp">
+
+                        <TextView
+                            android:id="@+id/tvTargetCalories"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Hedef: 2,750 kcal / gün"
+                            android:textStyle="bold"
+                            android:textSize="20sp"
+                            android:textColor="@color/primary_light"
+                            android:layout_marginBottom="12dp" />
+
+                        <TextView
+                            android:id="@+id/tvMacroDetails"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="🥩 Protein: 150g (600 kcal)\n🍚 Karbonhidrat: 345g (1,380 kcal)\n🥑 Sağlıklı Yağ: 68g (612 kcal)\n🔥 BMR: 1,780 kcal | TDEE: 2,400 kcal"
+                            android:textSize="13sp"
+                            android:textColor="@color/text_primary_dark"
+                            android:lineSpacingExtra="6dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- 4. HIIT & TABATA ZAMANLAYICI -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/panelHiit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/surface_dark"
+                app:cardCornerRadius="24dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/glass_border">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="26dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="HIIT &amp; Tabata Zamanlayıcı"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary_light"
+                        android:layout_marginBottom="4dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="20 sn Çalışma + 10 sn Dinlenme (8 Tur)"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_secondary_dark"
+                        android:layout_marginBottom="20dp" />
+
+                    <!-- Round Indicator Pill -->
+                    <TextView
+                        android:id="@+id/tvHiitRound"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tur: 1 / 8"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary_dark"
+                        android:background="@drawable/bg_pill_primary"
+                        android:paddingHorizontal="16dp"
+                        android:paddingVertical="6dp"
+                        android:layout_marginBottom="12dp" />
+
+                    <!-- Big Status Badge -->
+                    <TextView
+                        android:id="@+id/tvHiitStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="HAZIR"
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary_light"
+                        android:layout_marginBottom="12dp" />
+
+                    <!-- Huge Seconds Digits -->
+                    <TextView
+                        android:id="@+id/tvHiitSeconds"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="20"
+                        android:textSize="72sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary_dark"
+                        android:layout_marginBottom="24dp" />
+
+                    <!-- Timer Controls -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btnHiitStart"
+                            android:layout_width="0dp"
+                            android:layout_height="52dp"
+                            android:layout_weight="1"
+                            android:text="Başlat ▶"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/white"
+                            android:background="@drawable/button_gradient"
+                            android:layout_marginEnd="6dp"
+                            android:elevation="4dp" />
+
+                        <Button
+                            android:id="@+id/btnHiitReset"
+                            style="?attr/materialButtonOutlinedStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="52dp"
+                            android:layout_weight="1"
+                            android:text="Sıfırla ⏹"
+                            android:textSize="14sp"
+                            android:textColor="@color/error"
+                            app:strokeColor="@color/error"
+                            app:cornerRadius="16dp"
+                            android:layout_marginStart="6dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- 5. FİZİK & KİLO GÜNLÜĞÜ -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/panelPhoto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/surface_dark"
+                app:cardCornerRadius="24dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/glass_border">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="22dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="📸 Fizik &amp; Form Günlüğü"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary_light"
+                        android:layout_marginBottom="4dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Gelişim fotoğraflarını cihazında güvenle sakla."
+                        android:textSize="12sp"
+                        android:textColor="@color/text_secondary_dark"
+                        android:layout_marginBottom="16dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginBottom="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="GÜNCEL KİLO (KG)"
+                            android:textSize="10sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_secondary_dark"
+                            android:letterSpacing="0.08"
+                            android:layout_marginBottom="4dp" />
+
+                        <EditText
+                            android:id="@+id/etPhotoWeight"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:background="@drawable/bg_input_field"
+                            android:inputType="numberDecimal"
+                            android:text="75.0"
+                            android:gravity="center"
+                            android:textColor="@color/text_primary_dark"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <!-- Image Preview Card -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="220dp"
+                        app:cardBackgroundColor="@color/background_dark"
+                        app:cardCornerRadius="18dp"
+                        app:strokeWidth="1.5dp"
+                        app:strokeColor="@color/glass_border"
+                        android:layout_marginBottom="16dp">
+
+                        <ImageView
+                            android:id="@+id/ivProgressPhoto"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:contentDescription="Fizik Fotoğrafı" />
+
+                        <TextView
+                            android:id="@+id/tvPhotoPlaceholder"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="📷 Fotoğraf Seçmek İçin Dokun"
+                            android:textColor="@color/text_secondary_dark"
+                            android:textSize="14sp" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <Button
+                        android:id="@+id/btnSaveProgressPhoto"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:text="Form Fotoğrafını Kaydet 💾"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:background="@drawable/button_gradient"
+                        android:elevation="4dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </FrameLayout>
+
+    </LinearLayout>
+</ScrollView>

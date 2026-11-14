@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_dark">
+
+    <!-- Fragment Container with Global Header -->
+    <LinearLayout
+        android:id="@+id/mainContentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomNav"
+        android:orientation="vertical">
+
+        <!-- Global Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:paddingTop="32dp"
+            android:paddingBottom="24dp"
+            android:background="@color/background_dark">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="VEXA"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/primary_light"
+                    android:letterSpacing="0.08" />
+
+                <TextView
+                    android:id="@+id/tvDailyMotivationHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Zayıflar pes eder. Sen devam et."
+                    android:textSize="12sp"
+                    android:textColor="@color/text_secondary_dark" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvDailyMotivation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:paddingBottom="16dp"
+            android:background="@color/background_dark"
+            android:text="Ağrı geçici. Pes etmek sonsuzdur. Sen devam et."
+            android:textSize="13sp"
+            android:textStyle="bold|italic"
+            android:textColor="@color/text_secondary_dark"
+            android:gravity="start" />
+
+        <FrameLayout
+            android:id="@+id/fragmentContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <!-- Mimi Floating Speech Bubble (Sekmeleri takip edip konuştuğunda açılır) -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardMimiSpeechBubble"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottomNav"
+        android:layout_toStartOf="@id/cardMimiFab"
+        android:layout_alignBottom="@id/cardMimiFab"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="4dp"
+        app:cardBackgroundColor="@color/surface_dark"
+        app:cardCornerRadius="16dp"
+        app:strokeWidth="1.2dp"
+        app:strokeColor="@color/primary_light"
+        app:cardElevation="8dp"
+        android:clickable="true"
+        android:focusable="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="8dp">
+
+            <TextView
+                android:id="@+id/tvMimiSpeech"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Bugün hedefin 2.5L su içmek! Su içmeyi ihmal etme 💧"
+                android:textSize="12sp"
+                android:textColor="@color/text_primary_dark"
+                android:maxLines="3"
+                android:ellipsize="end" />
+
+            <ImageView
+                android:id="@+id/btnDismissBubble"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@android:drawable/ic_menu_close_clear_cancel"
+                app:tint="@color/text_secondary_dark"
+                android:padding="2dp"
+                android:layout_marginStart="6dp"
+                android:contentDescription="Kapat" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Mimi Circular Floating Action Avatar (Sağ Köşede Küçük Yuvarlak) -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardMimiFab"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@id/bottomNav"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="14dp"
+        app:cardBackgroundColor="@color/surface_dark"
+        app:cardCornerRadius="28dp"
+        app:strokeWidth="2dp"
+        app:strokeColor="@color/primary_light"
+        app:cardElevation="10dp"
+        android:clickable="true"
+        android:focusable="true">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/ivMimiAvatar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="8dp"
+                android:src="@drawable/ic_mimi_avatar"
+                android:contentDescription="Mimi AI" />
+
+            <!-- Online indicator -->
+            <View
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_gravity="top|end"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/bg_badge_success" />
+        </FrameLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Bottom Navigation with elevation and styling -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/surface_dark"
+        android:elevation="8dp"
+        app:itemIconTint="@color/bottom_nav_color_selector"
+        app:itemTextColor="@color/bottom_nav_color_selector"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_menu" />
+
+</RelativeLayout>

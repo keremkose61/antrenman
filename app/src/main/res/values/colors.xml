@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Brand: Teal -->
+    <color name="primary">#26A69A</color>
+    <color name="primary_dark">#00897B</color>
+    <color name="primary_light">#4DB6AC</color>
+
+    <!-- Accent: Soft Teal -->
+    <color name="accent">#26A69A</color>
+    <color name="accent_dark">#00897B</color>
+
+    <!-- Gradient Colors (Soft Teal) -->
+    <color name="gradient_start">#26A69A</color>
+    <color name="gradient_end">#4DB6AC</color>
+
+    <!-- Background Colors (Deep Soothing Slate) -->
+    <color name="background_light">#F5F5F7</color>
+    <color name="background_dark">#12141E</color>
+    <color name="background_dark_secondary">#1B1E2B</color>
+    <color name="background_dark_tertiary">#252836</color>
+
+    <!-- Surface Colors -->
+    <color name="surface_light">#FFFFFF</color>
+    <color name="surface_dark">#1B1E2B</color>
+
+    <!-- Glassmorphism Overlay Colors (Black in Light Mode for Contrast) -->
+    <color name="glass_white_5">#08000000</color>
+    <color name="glass_white_8">#0E000000</color>
+    <color name="glass_white_10">#12000000</color>
+    <color name="glass_border">#12000000</color>
+
+    <!-- Text Colors (Softer Whites and Grays) -->
+    <color name="text_primary_light">#1A1A2E</color>
+    <color name="text_primary_dark">#F0F2F5</color>
+    <color name="text_secondary_light">#6B6B8A</color>
+    <color name="text_secondary_dark">#8F9BB3</color>
+
+    <!-- Status Colors -->
+    <color name="success">#66BB6A</color>
+    <color name="error">#EF5350</color>
+    <color name="warning">#FFA726</color>
+
+    <!-- Legacy -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Bottom Navigation -->
+    <color name="bottom_nav_selected">#26A69A</color>
+    <color name="bottom_nav_unselected">#6B6B8A</color>
+
+    <!-- Notification Accent Colors -->
+    <color name="notif_color_water">#29B6F6</color>
+    <color name="notif_color_workout">#26A69A</color>
+    <color name="notif_color_motivation">#FFA726</color>
+    <color name="notif_color_steps">#66BB6A</color>
+</resources>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Fitness Beslenme Rehberi</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #e5e7eb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+  display: flex;
+  flex-direction: column; /* 👈 üst üste dizer */
+  gap: 20px;
+  align-items: center; /* isteğe bağlı: ortalasın */
+}
+
+
+    .card {
+      background: #020617;
+      border-radius: 12px;
+      padding: 20px;
+      width: 280px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.6);
+    }
+
+    .card h2 {
+      margin-bottom: 10px;
+      color: #38bdf8;
+    }
+
+    .card ul {
+      padding-left: 18px;
+    }
+
+    .card li {
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+
+    .note {
+      margin-top: 12px;
+      font-size: 0.9em;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Antrenman Öncesi -->
+    <div class="card">
+      <h2>Antrenman Öncesi</h2>
+      <ul>
+        <li>1 kase yoğurt</li>
+        <li>1 adet muz</li>
+        <li>2–3 yemek kaşığı yulaf</li>
+      </ul>
+      <div class="note">
+        Amaç: Enerji sağlamak, mideyi yormamak
+      </div>
+    </div>
+
+    <!-- Antrenman Sonrası -->
+    <div class="card">
+      <h2>Antrenman Sonrası</h2>
+      <ul>
+        <li>120–150 g ızgara tavuk</li>
+        <li>4–5 kaşık pirinç / bulgur</li>
+        <li>Sebze + yoğurt</li>
+      </ul>
+      <div class="note">
+        Amaç: Kas onarımı ve toparlanma
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

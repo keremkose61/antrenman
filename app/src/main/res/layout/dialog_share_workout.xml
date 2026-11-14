@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/surface_dark"
+    android:padding="20dp"
+    android:gravity="center">
+
+    <!-- The Shareable Card to be captured as Bitmap -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardWorkoutShare"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/background_dark"
+        app:cardCornerRadius="24dp"
+        app:strokeWidth="2dp"
+        app:strokeColor="@color/primary_light"
+        android:layout_marginBottom="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="28dp"
+            android:gravity="center">
+
+            <!-- Logo & Brand -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⚡ VEXA"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.12"
+                android:textColor="@color/primary_light"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="WORKOUT COMPLETED"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.15"
+                android:textColor="@color/text_secondary_dark"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Trophy Badge -->
+            <TextView
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:text="🏆"
+                android:textSize="36sp"
+                android:gravity="center"
+                android:background="@drawable/gradient_primary"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Workout Day & Muscle -->
+            <TextView
+                android:id="@+id/tvShareDay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pazartesi Antrenmanı"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary_dark"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:id="@+id/tvShareMuscle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Göğüs + Triceps"
+                android:textSize="16sp"
+                android:textColor="@color/gradient_start"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Stats Box -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/bg_day_banner"
+                android:padding="16dp"
+                android:gravity="center"
+                android:layout_marginBottom="20dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Egzersiz"
+                        android:textSize="11sp"
+                        android:textColor="@color/text_secondary_dark" />
+                    <TextView
+                        android:id="@+id/tvShareExercises"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="6 / 6"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary_light" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="30dp"
+                    android:background="@color/glass_border" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Durum"
+                        android:textSize="11sp"
+                        android:textColor="@color/text_secondary_dark" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="%100 Bitti"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/success" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvShareDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="24 Ekim 2026"
+                android:textSize="13sp"
+                android:textColor="@color/text_secondary_dark"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Zayıflar pes eder. Sen devam et."
+                android:textSize="12sp"
+                android:textStyle="italic"
+                android:textColor="@color/text_secondary_dark" />
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Action Buttons -->
+    <Button
+        android:id="@+id/btnShareImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="📸 Instagram / WhatsApp'ta Paylaş"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:background="@drawable/button_gradient"
+        android:padding="14dp"
+        android:layout_marginBottom="8dp" />
+
+    <Button
+        android:id="@+id/btnCloseShareDialog"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Kapat"
+        android:textColor="@color/text_secondary_dark"
+        app:strokeColor="@color/text_secondary_dark"
+        android:padding="12dp" />
+
+</LinearLayout>

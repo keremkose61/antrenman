@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/surface_dark"
+    android:padding="24dp"
+    android:gravity="center_horizontal">
+
+    <!-- Handle bar -->
+    <View
+        android:layout_width="48dp"
+        android:layout_height="4dp"
+        android:background="@color/glass_white_10"
+        android:layout_marginBottom="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dinlenme Süresi"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_primary_dark"
+        android:layout_marginBottom="24dp" />
+
+    <TextView
+        android:id="@+id/tvTimerDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00:00"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        android:textColor="@color/gradient_start"
+        android:gravity="center"
+        android:layout_marginBottom="32dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="16dp">
+
+        <Button
+            android:id="@+id/btn60s"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="60s"
+            android:backgroundTint="@color/glass_white_10"
+            android:textColor="@color/text_primary_dark"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/btn90s"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="90s"
+            android:backgroundTint="@color/glass_white_10"
+            android:textColor="@color/text_primary_dark"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/btn120s"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="120s"
+            android:backgroundTint="@color/glass_white_10"
+            android:textColor="@color/text_primary_dark" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnStopTimer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sıfırla / Durdur"
+        android:textColor="@android:color/white"
+        android:backgroundTint="@android:color/holo_red_dark" />
+
+</LinearLayout>
+
+
+
